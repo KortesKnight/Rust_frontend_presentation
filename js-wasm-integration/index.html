@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust WASM Example</title>
+</head>
+<body>
+    <h1>WASM Example with Trunk</h1>
+
+    <input type="text" id="name" placeholder="Enter your name" />
+    <button id="greet_button">Greet</button>
+    <p id="greet_message"></p>
+
+    <script type="module">
+        import init, { greet } from './pkg/js_wasm_integration.js';
+
+        async function main() {
+            await init();
+
+            document.getElementById("greet_button").addEventListener("click", () => {
+                const name = document.getElementById("name").value;
+                const message = greet(name);
+                document.getElementById("greet_message").textContent = message;
+            });
+        }
+
+        main();
+    </script>
+</body>
+</html>
