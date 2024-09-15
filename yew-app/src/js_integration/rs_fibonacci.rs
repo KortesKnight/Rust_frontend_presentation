@@ -44,13 +44,6 @@ pub fn fibonacci_rust_1(n: u32) -> u128 {
 // Функция для измерения времени выполнения на Rust с использованием web_sys
 pub fn measure_rust_1_fibonacci(n: u32) -> (u128, u32, u32) {
     let start = Utc::now().nanosecond();
-    
-    let mut test = n * 1_000_000;
-
-    while test > 0 {
-        test -= 1;
-    }
-
     let result = fibonacci_rust_1(n);
     let end = Utc::now().nanosecond();
     let duration = end - start;
