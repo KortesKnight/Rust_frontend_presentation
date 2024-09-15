@@ -1,11 +1,9 @@
+use crate::shared::shared::Route;
 use yew::prelude::*;
 use yew_router::prelude::*;
-use crate::shared::shared::Route;
-
 
 #[function_component]
 pub fn Header() -> Html {
-
     html! {
 
         <div class="fixed w-full flex space-x-4 top-0 left-0 bg-neutral-500">

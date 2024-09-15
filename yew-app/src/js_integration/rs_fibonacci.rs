@@ -34,7 +34,7 @@ pub fn fibonacci_rust_1(n: u32) -> u128 {
             Some(temp) => temp,
             None => break,
         };
-        
+
         a = b;
         b = temp;
     }

@@ -1,12 +1,11 @@
 use yew::prelude::*;
 use yew_router::{BrowserRouter, Switch};
 
-use crate::shared::shared::Route;
 use crate::processes::switch::switch;
+use crate::shared::shared::Route;
 
 #[function_component(App)]
 pub fn app() -> Html {
-    
     html! {
 
         <BrowserRouter>
@@ -20,6 +19,6 @@ pub fn app() -> Html {
 
             </div>
         </BrowserRouter>
-        
+
     }
 }
