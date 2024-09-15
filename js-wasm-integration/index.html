@@ -22,8 +22,7 @@
 
             document.getElementById("greet_button").addEventListener("click", () => {
                 const name = document.getElementById("name").value;
-                const message = greet(name);
-                document.getElementById("greet_message").textContent = message;
+                document.getElementById("greet_message").textContent = greet(name);
             });
         }
 
