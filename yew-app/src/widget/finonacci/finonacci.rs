@@ -2,7 +2,7 @@ use gloo_console::log;
 use web_sys::HtmlInputElement;
 use yew::prelude::*;
 
-use crate::js_integration::{
+use super::js_integration::{
     js_integration::{greet, JsFibonacciResult, Method},
     rs_fibonacci::*,
 };

@@ -1,8 +1,7 @@
-// use gloo_console::log;
 use wasm_bindgen_futures::spawn_local;
 use yew::prelude::*;
 
-use crate::api::httpbin_org::{httpbin_org_request, FormData};
+use super::api::httpbin_org::{httpbin_org_request, FormData};
 use crate::features::input::InputField;
 
 enum SubmitState {
@@ -46,7 +45,6 @@ pub fn contact_form() -> Html {
         })
     };
 
-    // Рендерим компонент в зависимости от состояния отправки
     match &*submit_state {
         SubmitState::Idle => html! {
             <form class="flex flex-col justify-center items-center space-y-4" onsubmit={submit_form}>

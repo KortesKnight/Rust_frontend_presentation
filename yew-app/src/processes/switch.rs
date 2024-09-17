@@ -1,6 +1,4 @@
 use yew::prelude::*;
-use yew_router::prelude::*;
-
 use crate::shared::shared::Route;
 use crate::widget::{finonacci::Fibonacci, form::ContactForm, header::Header};
 
@@ -27,9 +25,8 @@ pub fn switch(routes: Route) -> Html {
         Route::NotFound => html! {
             <>
                 <Header/>
-                <div class=" h-screen w-screen bg-black flex justify-center items-center">
+                <div class="h-screen w-screen bg-black flex justify-center items-center">
                     <p class="text-center align-middle text-white text-7xl">{"Nothing is here. 404"}</p>
-                    <Link<Route> classes={"text-white"} to={Route::Main}>{"Main page!"}</Link<Route>>
                 </div>
             </>
         },
