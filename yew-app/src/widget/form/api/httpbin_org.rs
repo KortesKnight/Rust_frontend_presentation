@@ -14,11 +14,9 @@ struct ResponseData {
 }
 
 pub async fn httpbin_org_request(form_data: &FormData) -> Result<FormData, String> {
-    let body = serde_json::to_string(&form_data).map_err(|e| e.to_string())?;
-
+    
     let response = Request::post("https://httpbin.org/post")
-        .header("Content-Type", "application/json")
-        .body(body)
+        .json(&form_data)
         .map_err(|e| format!("Ошибка построения запроса: {:?}", e))?
         .send()
         .await
