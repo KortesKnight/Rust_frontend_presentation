@@ -1,6 +1,6 @@
 use yew::prelude::*;
-use crate::shared::shared::Route;
-use crate::widget::{finonacci::Fibonacci, form::ContactForm, header::Header};
+use crate::shared::Route;
+use crate::widget::{fibonacci::Fibonacci, form::ContactForm, header::Header};
 
 pub fn switch(routes: Route) -> Html {
     match routes {

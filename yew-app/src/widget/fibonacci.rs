@@ -1,11 +1,10 @@
+mod js_integration;
+
+use js_integration::*;
+
 use gloo_console::log;
 use web_sys::HtmlInputElement;
 use yew::prelude::*;
-
-use super::js_integration::{
-    js_integration::{greet, JsFibonacciResult, Method},
-    rs_fibonacci::*,
-};
 
 // Компонент Yew
 #[function_component]
@@ -119,16 +118,16 @@ pub fn Fibonacci() -> Html {
                 </div>
 
                 <button class="p-2 bg-neutral-500 text-white hover:bg-pink-600 hover:text-cyan-400" onclick={recalculate_js}>{"Recalculate JS"}</button>
-                <p class="p-2">{ format!("JavaScript: Result = {}, Time = {} ms, N = {:?}", (*js_state).result, (*js_state).time, (*js_state).n) }</p>
+                <p class="p-2">{ format!("JavaScript: Result = {}, Time = {} ms, N = {:?}", js_state.result, js_state.time, js_state.n) }</p>
 
                 <button class="p-2 bg-neutral-500 text-white hover:bg-pink-600 hover:text-cyan-400" onclick={recalculate_js_1}>{"Recalculate JS 1"}</button>
-                <p class="p-2">{ format!("JavaScript: Result = {}, Time = {} ms, N = {:?}", (*js_1_state).result, (*js_1_state).time, (*js_1_state).n) }</p>
+                <p class="p-2">{ format!("JavaScript: Result = {}, Time = {} ms, N = {:?}", js_1_state.result, js_1_state.time, js_1_state.n) }</p>
 
                 <button class="p-2 bg-neutral-500 text-white hover:bg-pink-600 hover:text-cyan-400" onclick={recalculate_rust}>{"Recalculate Rust"}</button>
-                <p class="p-2">{ format!("Rust: Result = {}, Time = {} ms, N = {:?}", (*rust_state).0, (*rust_state).1, (*rust_state).2) }</p>
+                <p class="p-2">{ format!("Rust: Result = {}, Time = {} ms, N = {:?}", rust_state.0, rust_state.1, rust_state.2) }</p>
 
                 <button class="p-2 bg-neutral-500 text-white hover:bg-pink-600 hover:text-cyan-400" onclick={recalculate_rust_1}>{"Recalculate Rust 1"}</button>
-                <p class="p-2">{ format!("Rust: Result = {}, Time = {} ns, N = {:?}", (*rust_1_state).0, (*rust_1_state).1, (*rust_1_state).2) }</p>
+                <p class="p-2">{ format!("Rust: Result = {}, Time = {} ns, N = {:?}", rust_1_state.0, rust_1_state.1, rust_1_state.2) }</p>
 
             </div>
 

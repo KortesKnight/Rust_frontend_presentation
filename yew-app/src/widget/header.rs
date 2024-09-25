@@ -1,4 +1,4 @@
-use crate::shared::shared::Route;
+use crate::shared::Route;
 use yew::prelude::*;
 use yew_router::prelude::*;
 

@@ -3,13 +3,13 @@ use serde::Deserialize;
 use wasm_bindgen::prelude::*;
 
 // Объявляем функцию из JavaScript
-#[wasm_bindgen(module = "/src/widget/finonacci/js_integration/hellow_world.js")]
+#[wasm_bindgen(module = "/js_files/hellow_world.js")]
 extern "C" {
     pub fn greet(name: &str) -> String;
 }
 
 // Объявляем функцию из JavaScript
-#[wasm_bindgen(module = "/src/widget/finonacci/js_integration/fibonacci.js")]
+#[wasm_bindgen(module = "/js_files/fibonacci.js")]
 extern "C" {
     fn measure_js_fibonacci(n: u32) -> JsValue;
 

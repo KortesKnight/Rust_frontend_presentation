@@ -1,7 +1,7 @@
 use yew::prelude::*;
 use yew_router::{BrowserRouter, Switch};
 
-use crate::{processes::switch::switch, shared::shared::Route};
+use crate::{processes::switch::switch, shared::Route};
 
 #[function_component(App)]
 pub fn app() -> Html {

@@ -4,4 +4,4 @@ mod widget;
 mod processes;
 mod app;
 
-pub use crate::app::app::App;
+pub use crate::app::App;

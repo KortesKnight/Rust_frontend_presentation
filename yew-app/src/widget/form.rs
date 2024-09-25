@@ -1,7 +1,9 @@
+mod api;
+
 use wasm_bindgen_futures::spawn_local;
 use yew::prelude::*;
 
-use super::api::httpbin_org::{httpbin_org_request, FormData};
+use api::{FormData, httpbin_org_request};
 use crate::features::input::InputField;
 
 enum SubmitState {
@@ -13,9 +15,9 @@ enum SubmitState {
 
 #[function_component(ContactForm)]
 pub fn contact_form() -> Html {
-    let name = use_state(|| String::new());
-    let email = use_state(|| String::new());
-    let message = use_state(|| String::new());
+    let name = use_state(String::new);
+    let email = use_state(String::new);
+    let message = use_state(String::new);
     let submit_state = use_state(|| SubmitState::Idle); // Используем состояние отправки
 
     let submit_form = {
